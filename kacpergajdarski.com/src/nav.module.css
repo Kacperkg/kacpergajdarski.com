@@ -1,0 +1,20 @@
+nav {
+    width: 100%;
+    color: #1e1e1e;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+a {
+    color: #1e1e1e;
+}
+
+div.navContent {
+    color: #1e1e1e;
+    gap: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
