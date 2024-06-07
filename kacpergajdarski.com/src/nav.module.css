@@ -7,14 +7,22 @@ nav {
     font-weight: 600;
 }
 
-a {
+nav a {
+    transition: all ease 200ms;
+    border-radius: 15px;
+    padding: 8px 16px;
     color: #1e1e1e;
 }
 
-div.navContent {
+nav div.navContent {
     color: #1e1e1e;
-    gap: 2rem;
+    gap: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+nav a:hover {
+    background-color: #1e1e1e;
+    color: #fffff0;
 }

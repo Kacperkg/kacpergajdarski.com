@@ -2,7 +2,7 @@ import Styles from "./header.module.css";
 
 function Header() {
     return (
-        <section>
+        <section className={Styles.header}>
             <div className={Styles.infobar}>
                 <aside className={Styles.leftbar}>
                     <h1>Front-end Developer</h1>

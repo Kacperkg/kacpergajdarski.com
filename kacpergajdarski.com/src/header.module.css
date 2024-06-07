@@ -1,4 +1,4 @@
-section {
+section.header {
     margin-top: 3rem;
     border-radius: 15px;
     min-height: 80vh;
@@ -8,14 +8,14 @@ section {
     padding: 32px 64px;
 }
 
-p {
+section.header p {
     max-width: 550px;
 }
 
-h1 {
+section.header h1 {
     font-size: 64px;
 }
-h2 {
+section.header h2 {
     font-size: 36px;
 }
 

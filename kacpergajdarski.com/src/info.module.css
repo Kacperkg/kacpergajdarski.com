@@ -1,0 +1,34 @@
+section.infocard {
+    min-height: 50vh;
+    background-color: #fffff0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.infocard p {
+    color: #1e1e1e;
+    font-size: 28px;
+    max-width: 1000px;
+}
+
+div.avatar {
+    aspect-ratio: 1;
+    width: 200px;
+    height: auto;
+    background-color: #1e1e1e;
+    border-radius: 100%;
+}
+
+div.aboutme {
+    color: #1e1e1e;
+    font-size: 24px;
+    opacity: 20%;
+}
+
+section.infocard .leftbar {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+}

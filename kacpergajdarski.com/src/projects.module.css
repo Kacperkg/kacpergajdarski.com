@@ -1,0 +1,60 @@
+section.projects {
+    height: 95vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.projectCard {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 24px;
+    border-radius: 15px;
+    background-color: #1e1e1e;
+    width: 100%;
+    max-width: 700px;
+}
+
+.projectImage {
+    height: 90%;
+    background-color: #fffff0;
+}
+
+div.projectNext {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    opacity: 0.1;
+    background-color: white;
+}
+
+projectNext:after {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+div.projectBack {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    background-color: #ffffff;
+    opacity: 10%;
+    border-radius: 100%;
+}
+
+.projectSlide {
+    display: flex;
+    gap: 10px;
+}
+
+.projectHeader {
+    display: flex;
+    justify-content: space-between;
+}
