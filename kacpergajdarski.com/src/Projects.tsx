@@ -5,7 +5,7 @@ function Projects() {
         <section className={Styles.projects}>
             <div className={Styles.projectCard}>
                 <div className={Styles.projectHeader}>
-                    <h1 className={Styles.projectName}>Project #1</h1>
+                    <h1 className={Styles.projectName}>Selected Projects</h1>
                     <div className={Styles.projectSlide}>
                         <div className={Styles.projectNext}>
                             <div></div>
@@ -15,21 +15,15 @@ function Projects() {
                         </div>
                     </div>
                 </div>
-                <div className={Styles.projectImage}></div>
-            </div>
-            <div className={Styles.projectCard}>
-                <div className={Styles.projectHeader}>
-                    <h1 className={Styles.projectName}>Project #2</h1>
-                    <div className={Styles.projectSlide}>
-                        <div className={Styles.projectNext}>
-                            <div></div>
-                        </div>
-                        <div className={Styles.projectBack}>
-                            <div></div>
-                        </div>
-                    </div>
+                <div className={Styles.projectImage}>
+                    <ul>
+                        <li className={Styles.projectActive}></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <span></span>
                 </div>
-                <div className={Styles.projectImage}></div>
             </div>
         </section>
     );

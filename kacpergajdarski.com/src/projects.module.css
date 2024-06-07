@@ -10,16 +10,51 @@ section.projects {
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    padding: 24px;
+    padding: 24px 48px;
     border-radius: 15px;
     background-color: #1e1e1e;
     width: 100%;
-    max-width: 700px;
 }
 
 .projectImage {
     height: 90%;
+    background-color: #1b1b1b;
+    position: relative;
+}
+
+.projectImage span {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
     background-color: #fffff0;
+    position: absolute;
+    left: auto;
+    right: 32px;
+    top: auto;
+    bottom: 32px;
+}
+
+.projectImage ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    bottom: 32px;
+    top: auto;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.projectImage ul li {
+    border-radius: 100%;
+    width: 12px;
+    height: 12px;
+    background-color: #fffff0;
+    opacity: 0.2;
+}
+
+.projectActive {
+    opacity: 1 !important;
 }
 
 div.projectNext {
