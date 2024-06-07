@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./Footer.tsx";
 import Header from "./Header.tsx";
 import InfoCard from "./Info.tsx";
 import Navbar from "./Nav.tsx";
@@ -11,6 +12,7 @@ function App() {
             <Header></Header>
             <InfoCard></InfoCard>
             <Projects></Projects>
+            <Footer></Footer>
         </>
     );
 }

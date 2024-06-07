@@ -4,7 +4,6 @@ function InfoCard() {
     return (
         <section className={Styles.infocard}>
             <div className={Styles.leftbar}>
-                <div className={Styles.aboutme}>About Me</div>
                 <div className={Styles.avatar}></div>
             </div>
             <div className={Styles.rightbar}>
