@@ -1,34 +1,57 @@
 section.infocard {
-    min-height: 50vh;
-    background-color: #fffff0 !important;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    margin-top: 200px;
+    padding-inline: 50px;
 
-section.infocard p {
-    color: #1e1e1e;
-    font-size: 28px;
-    max-width: 1000px;
-}
-
-div.avatar {
-    aspect-ratio: 1;
-    width: 200px;
-    height: auto;
-    background-color: #1e1e1e;
-    border-radius: 100%;
-}
-
-div.aboutme {
-    color: #1e1e1e;
-    font-size: 24px;
-    opacity: 20%;
-}
-
-section.infocard .leftbar {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: start;
-    gap: 1rem;
+    text-align: left;
+}
+
+.infocard h1 {
+    color: #fff;
+    font-family: "Space Grotesk";
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 80%; /* 96px */
+    letter-spacing: -3.6px;
+    text-transform: uppercase;
+}
+
+.infocard > p.infoBio {
+    margin-top: 80px;
+    max-width: 533px;
+
+    color: #fff;
+    font-family: "Space Grotesk";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 150% */
+}
+
+.infoContact {
+    gap: 16px;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff !important;
+    font-family: "Space Grotesk";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.infoContact svg {
+    width: 12px;
+    height: 12px;
+
+    stroke-width: 2px;
+    stroke: #fff;
 }

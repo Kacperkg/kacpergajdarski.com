@@ -9,10 +9,10 @@ function App() {
     return (
         <>
             <Navbar />
-            <Header></Header>
-            <InfoCard></InfoCard>
-            <Projects></Projects>
-            <Footer></Footer>
+            <Header />
+            <InfoCard />
+            <Projects />
+            <Footer />
         </>
     );
 }

@@ -8,7 +8,6 @@ function Navbar() {
             </div>
             <div className={Styles.navContent}>
                 <a href="">Contact</a>
-                {`\u2022`}
                 <a href="">Projects</a>
             </div>
         </nav>

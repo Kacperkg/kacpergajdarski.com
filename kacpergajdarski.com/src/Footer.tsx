@@ -1,65 +1,77 @@
+import { Link } from "@react-email/link";
 import Styles from "./footer.module.css";
 
 function Footer() {
     return (
         <section className={Styles.footer}>
-            <div className={Styles.footerContact}>
-                <h1>Have a cool project?</h1>
-                <a href="" className={Styles.button}>
-                    Contact Me
-                </a>
+            <div className={Styles.footerTitle}>
+                Have a cool project in mind? Send me a quick message.
             </div>
-            <div className={Styles.hDivider}></div>
-            <div className={Styles.footerFinal}>
-                <div className={Styles.footerInfo}>
-                    <div className={Styles.footerAvatar}></div>
-                    <div className={Styles.footerProfile}>
-                        <div className={Styles.footerPerson}>
-                            Kacper Gajdarski
-                        </div>
-                        <div className={Styles.footerLocation}>
-                            Based In Edinburgh
-                        </div>
-                    </div>
+            <Link
+                href="mailto: contact@kacpergajdarski.com"
+                className={Styles.footerContact}>
+                <p>get in touch</p>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none">
+                    <path
+                        d="M1 13H13M13 13V1M13 13L1 1"
+                        stroke="white"
+                        stroke-width="2"
+                    />
+                </svg>
+            </Link>
+            <div className={Styles.footerFoot}>
+                <p> © 2024 Kacper Gajdarski. All rights reserved</p>
+                <div>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="208"
+                        height="25"
+                        viewBox="0 0 208 25"
+                        fill="none">
+                        <Link className={Styles.links}>
+                            href="https://www.instagram.com/kacper.gski/"
+                            <path
+                                d="M200.128 1H191.882C188.088 1 185.011 4.07863 185.011 7.875V16.125C185.011 19.9214 188.088 23 191.882 23H200.128C203.923 23 207 19.9214 207 16.125V7.875C207 4.07863 203.923 1 200.128 1ZM204.938 16.125C204.938 18.7787 202.781 20.9375 200.128 20.9375H191.882C189.23 20.9375 187.072 18.7787 187.072 16.125V7.875C187.072 5.22125 189.23 3.0625 191.882 3.0625H200.128C202.781 3.0625 204.938 5.22125 204.938 7.875V16.125Z"
+                                fill="white"
+                                stroke="white"
+                                stroke-width="0.3"
+                            />
+                            <path
+                                d="M196.006 6.5C192.97 6.5 190.508 8.96262 190.508 12C190.508 15.0374 192.97 17.5 196.006 17.5C199.041 17.5 201.503 15.0374 201.503 12C201.503 8.96262 199.041 6.5 196.006 6.5ZM196.006 15.4375C194.112 15.4375 192.57 13.8948 192.57 12C192.57 10.1039 194.112 8.5625 196.006 8.5625C197.899 8.5625 199.441 10.1039 199.441 12C199.441 13.8948 197.899 15.4375 196.006 15.4375Z"
+                                fill="white"
+                                stroke="white"
+                                stroke-width="0.3"
+                            />
+                        </Link>
+                        <Link href="https://github.com/Kacperkg">
+                            <path
+                                d="M201.915 6.82024C202.32 6.82024 202.648 6.49212 202.648 6.08736C202.648 5.68261 202.32 5.35449 201.915 5.35449C201.511 5.35449 201.183 5.68261 201.183 6.08736C201.183 6.49212 201.511 6.82024 201.915 6.82024Z"
+                                fill="white"
+                                stroke="white"
+                                stroke-width="0.3"
+                            />
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M104.01 1C97.3687 1 92 6.40833 92 13.0992C92 18.4475 95.4399 22.9748 100.212 24.5771C100.809 24.6976 101.027 24.3168 101.027 23.9965C101.027 23.716 101.008 22.7545 101.008 21.7527C97.6667 22.474 96.971 20.3104 96.971 20.3104C96.4341 18.9082 95.6386 18.5478 95.6386 18.5478C94.5451 17.8066 95.7182 17.8066 95.7182 17.8066C96.9312 17.8868 97.5676 19.0486 97.5676 19.0486C98.6412 20.8913 100.371 20.3707 101.067 20.0501C101.166 19.2688 101.485 18.728 101.823 18.4276C99.1582 18.1471 96.3547 17.1055 96.3547 12.458C96.3547 11.1359 96.8316 10.0543 97.5873 9.21304C97.4681 8.91263 97.0504 7.67043 97.7068 6.00787C97.7068 6.00787 98.7208 5.6873 101.007 7.24981C101.986 6.98497 102.996 6.85024 104.01 6.84911C105.024 6.84911 106.058 6.98948 107.012 7.24981C109.299 5.6873 110.313 6.00787 110.313 6.00787C110.969 7.67043 110.552 8.91263 110.432 9.21304C111.208 10.0543 111.665 11.1359 111.665 12.458C111.665 17.1055 108.862 18.1269 106.177 18.4276C106.615 18.8081 106.992 19.5292 106.992 20.6711C106.992 22.2936 106.973 23.5957 106.973 23.9962C106.973 24.3168 107.192 24.6976 107.788 24.5774C112.56 22.9745 116 18.4475 116 13.0992C116.02 6.40833 110.631 1 104.01 1Z"
+                                fill="white"
+                            />
+                        </Link>
+                        <Link
+                            href="https://www.linkedin.com/in/kacper-gajdarski-9b9b55233/"
+                            className={Styles.links}>
+                            <path
+                                d="M22.2234 1H1.77187C0.792187 1 0 1.77344 0 2.72969V23.2656C0 24.2219 0.792187 25 1.77187 25H22.2234C23.2031 25 24 24.2219 24 23.2703V2.72969C24 1.77344 23.2031 1 22.2234 1ZM7.12031 21.4516H3.55781V9.99531H7.12031V21.4516ZM5.33906 8.43438C4.19531 8.43438 3.27188 7.51094 3.27188 6.37187C3.27188 5.23281 4.19531 4.30937 5.33906 4.30937C6.47813 4.30937 7.40156 5.23281 7.40156 6.37187C7.40156 7.50625 6.47813 8.43438 5.33906 8.43438ZM20.4516 21.4516H16.8937V15.8828C16.8937 14.5563 16.8703 12.8453 15.0422 12.8453C13.1906 12.8453 12.9094 14.2938 12.9094 15.7891V21.4516H9.35625V9.99531H12.7687V11.5609H12.8156C13.2891 10.6609 14.4516 9.70938 16.1813 9.70938C19.7859 9.70938 20.4516 12.0813 20.4516 15.1656V21.4516Z"
+                                fill="white"
+                            />
+                        </Link>
+                    </svg>
                 </div>
-                <div className={Styles.footerLinks}>
-                    <ul>
-                        <li>Navigation</li>
-                        <li>
-                            <a href="">Home</a>
-                        </li>
-                        <li>
-                            <a href="">About</a>
-                        </li>
-                        <li>
-                            <a href="">Projects</a>
-                        </li>
-                        <li>
-                            <a href="">Contact</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>Contact</li>
-                        <li>
-                            <a href="">LinkedIn</a>
-                        </li>
-                        <li>
-                            <a href="">Instagram</a>
-                        </li>
-                        <li>
-                            <a href="">Website</a>
-                        </li>
-                        <li>
-                            <a href="">Email</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className={Styles.hDivider}></div>
-            <div className={Styles.footerCopyright}>
-                <p>2024</p>
-                <div className={Styles.vDivider}></div>
-                <p>Kacper Gajdarski</p>
             </div>
         </section>
     );

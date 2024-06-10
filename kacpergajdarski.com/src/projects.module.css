@@ -1,56 +1,71 @@
-section.projects {
-    height: 95vh;
+section.projectsSection {
+    margin-top: 200px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    padding-left: 50px;
 }
 
-.projectCard {
-    justify-content: space-around;
+.projectContainer {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    padding: 24px 48px;
-    border-radius: 15px;
-    background-color: #1e1e1e;
+    overflow-x: hidden;
+}
+
+.projects {
     width: 100%;
 }
 
 .projectImage {
-    height: 90%;
-    background-color: #1b1b1b;
-    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.05);
+    aspect-ratio: 1.86/1;
+    width: 80vw;
+    height: auto;
 }
 
-.projectImage ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    position: absolute;
-    bottom: 32px;
-    top: auto;
-    left: 50%;
-    transform: translate(-50%, 0);
+.projectPreview {
+    background: rgba(255, 255, 255, 0.1);
+    aspect-ratio: 1.86/1;
+    width: 80vw;
+    height: auto;
 }
 
-.projectImage ul li {
-    border-radius: 100%;
-    width: 12px;
-    height: 12px;
-    background-color: #fffff0;
-    opacity: 0.2;
-}
-
-.projectActive {
-    opacity: 1 !important;
-}
-
-.projectSlide {
-    display: flex;
-    gap: 10px;
-}
-
-.projectHeader {
+.projectDetails {
+    margin-top: 80px;
     display: flex;
     justify-content: space-between;
+}
+
+.projectDetails p {
+    max-width: 548px;
+    text-align: left;
+}
+
+.projectDesc {
+    padding-top: 60px;
+
+    padding-right: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.projectDesc h1 {
+    color: #fff;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.projectDesc p {
+    max-width: 548px;
+
+    color: #fff;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
 }
