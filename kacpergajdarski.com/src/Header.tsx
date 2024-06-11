@@ -1,10 +1,37 @@
 import { Link } from "@react-email/components";
+import { motion } from "framer-motion";
+import testProsche from "./assets/testProsche.png";
 import Styles from "./header.module.css";
+
 function Header() {
     return (
         <section className={Styles.header}>
-            <h1 className={Styles.headerTitle}>kacper gajdarski</h1>
-            <div className={Styles.bio}>
+            <motion.div
+                className={Styles.headerTitle}
+                variants={{
+                    hidden: { opacity: 0, y: -105 },
+                    visable: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate="visable"
+                transition={{
+                    duration: 0.5,
+                    delay: 0.25,
+                }}>
+                kacper gajdarski
+            </motion.div>
+            <motion.div
+                className={Styles.bio}
+                variants={{
+                    hidden: { opacity: 0, y: 105 },
+                    visable: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate="visable"
+                transition={{
+                    duration: 0.5,
+                    delay: 0.5,
+                }}>
                 <p>
                     Junior front-end developer with expertise in React and
                     Flutter, adept at creating responsive web and mobile
@@ -12,9 +39,13 @@ function Header() {
                     seamless user experiences.
                 </p>
                 {Email()}
-            </div>
+            </motion.div>
 
-            <div className={Styles.headerImage}></div>
+            <div
+                className={Styles.headerImage}
+                style={{
+                    backgroundImage: `url(${testProsche})`,
+                }}></div>
         </section>
     );
 }

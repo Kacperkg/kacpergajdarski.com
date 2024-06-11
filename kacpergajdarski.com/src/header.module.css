@@ -41,6 +41,7 @@ section.header {
     margin-top: 60px;
     align-items: center;
     gap: 16px;
+    position: relative;
 
     color: #fff !important;
     text-align: center;
@@ -50,6 +51,22 @@ section.header {
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+}
+
+.headerContact::after {
+    content: "";
+    position: absolute;
+
+    background-color: #ffffff;
+    height: 1px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: all ease-in 200ms;
+}
+
+.headerContact:hover::after {
+    width: 100%;
 }
 
 .headerContact path {
@@ -62,9 +79,12 @@ section.header {
 
 .headerImage {
     margin-top: 80px;
+    background-size: 90vw;
+    background-repeat: no-repeat;
+    background-position: center center;
 
     aspect-ratio: 2.04/1;
     height: auto;
-    width: 97%;
-    background: rgba(255, 255, 255, 0.05);
+    width: 100%;
+    max-width: 1628px;
 }

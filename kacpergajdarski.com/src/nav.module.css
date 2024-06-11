@@ -10,7 +10,9 @@ nav {
     letter-spacing: -1px;
 }
 
-nav a {
+nav p {
+    position: relative;
+    cursor: pointer;
     transition: all ease 200ms;
     border-radius: 15px;
     color: #fff;
@@ -23,5 +25,22 @@ nav div.navContent {
     justify-content: center;
 }
 
-nav a:hover {
+nav p::after {
+    content: "";
+    position: absolute;
+
+    background-color: #ffffff;
+    height: 1px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: all ease-in 200ms;
+}
+
+nav p:hover::after {
+    width: 100%;
+}
+
+nav div a {
+    cursor: pointer;
 }

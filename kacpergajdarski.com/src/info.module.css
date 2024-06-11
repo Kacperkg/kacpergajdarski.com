@@ -38,6 +38,7 @@ section.infocard {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     color: #fff !important;
     font-family: "Space Grotesk";
@@ -54,4 +55,20 @@ section.infocard {
 
     stroke-width: 2px;
     stroke: #fff;
+}
+
+.infoContact::after {
+    content: "";
+    position: absolute;
+
+    background-color: #ffffff;
+    height: 1px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: all ease-in 200ms;
+}
+
+.infoContact:hover::after {
+    width: 100%;
 }

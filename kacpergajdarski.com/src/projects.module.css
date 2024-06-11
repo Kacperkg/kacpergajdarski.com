@@ -1,17 +1,29 @@
 section.projectsSection {
     margin-top: 200px;
     width: 100%;
-    padding-left: 50px;
 }
 
 .projectContainer {
     width: 100%;
     display: flex;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    transition: scroll 0.3s ease-in-out;
+    padding-right: 50px;
+}
+
+.projectContainer:first-child {
+    padding-left: 50px;
 }
 
 .projects {
     width: 100%;
+}
+
+.test {
+    background-color: red;
+    height: 100%;
+    width: 50px;
 }
 
 .projectImage {
@@ -20,6 +32,10 @@ section.projectsSection {
     aspect-ratio: 1.86/1;
     width: 80vw;
     height: auto;
+
+    background-size: 80vw;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .projectPreview {
@@ -42,6 +58,7 @@ section.projectsSection {
 
 .projectDesc {
     padding-top: 60px;
+    padding-left: 50px;
 
     padding-right: 50px;
     display: flex;
@@ -68,4 +85,8 @@ section.projectsSection {
     font-weight: 400;
     line-height: normal;
     text-align: left;
+}
+
+svg > g {
+    cursor: pointer;
 }
