@@ -90,3 +90,25 @@ section.projectsSection {
 svg > g {
     cursor: pointer;
 }
+
+@media (max-width: 1000px) {
+    .projectDesc p,
+    h1 {
+        display: none;
+        visibility: hidden;
+    }
+    .projectDesc {
+        justify-content: center;
+    }
+
+    .projectImage {
+        display: inline-block;
+        aspect-ratio: 1.86/1.6;
+        width: 80vw;
+        height: auto;
+
+        background-size: 100vw;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}

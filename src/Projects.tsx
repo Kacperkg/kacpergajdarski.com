@@ -1,6 +1,7 @@
+import { Link } from "@react-email/components";
 import React, { useRef, useState } from "react";
+import comingsoon from "./assets/coming.png";
 import backgroundImage from "./assets/gabor-papp-9PBJr66VJwU-unsplash.jpg";
-import test2 from "./assets/test2.png";
 import test1 from "./assets/testProsche.png";
 import Styles from "./projects.module.css";
 
@@ -11,38 +12,14 @@ function Projects() {
         {
             id: 1,
             url: test1,
-            name: "Project One",
+            name: "Entertainment Agency",
             description: "Description for project one.",
         },
         {
             id: 2,
-            url: test2,
-            name: "Project Two",
-            description: "Description for project two.",
-        },
-        {
-            id: 3,
-            url: test1,
-            name: "Project Three",
-            description: "Description for project three.",
-        },
-        {
-            id: 4,
-            url: test2,
-            name: "Project Four",
-            description: "Description for project four.",
-        },
-        {
-            id: 5,
-            url: test1,
-            name: "Project Five",
-            description: "Description for project five.",
-        },
-        {
-            id: 6,
-            url: test2,
-            name: "Project Six",
-            description: "Description for project six.",
+            url: comingsoon,
+            name: "Coming Soon",
+            description: "",
         },
     ];
 
@@ -66,7 +43,7 @@ function Projects() {
         <section className={Styles.projectsSection}>
             <div className={Styles.projectContainer} ref={ref}>
                 {images.map((image, index) => (
-                    <div
+                    <Link
                         className={Styles.projects}
                         key={image.id}
                         style={{
@@ -82,7 +59,7 @@ function Projects() {
                                 width: "80vw", // Set width to 80vw
                             }}
                         />
-                    </div>
+                    </Link>
                 ))}
             </div>
 
@@ -112,7 +89,7 @@ function Projects() {
                         <rect
                             x="104"
                             y="0"
-                            width="105"
+                            width="104"
                             height="22"
                             fill="transparent"
                             onClick={() => handleClick("next")}

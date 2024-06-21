@@ -11,7 +11,7 @@
     color: #fff;
     text-align: center;
     font-family: "Space Grotesk";
-    font-size: 120px;
+    font-size: clamp(48px, 8vw, 120px);
     font-style: normal;
     font-weight: 300;
     line-height: 80%; /* 96px */
@@ -49,7 +49,7 @@
     color: #fff;
     text-align: center;
     font-family: "Space Grotesk";
-    font-size: 40px;
+    font-size: clamp(24px, 4vw, 40px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -62,7 +62,7 @@
     padding: 120px 50px 50px 50px;
     color: #fff;
     font-family: "Space Grotesk";
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -71,4 +71,20 @@
 
 .footerFoot g {
     cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .footerFoot {
+        flex-direction: column-reverse;
+        gap: 24px;
+    }
+
+    .footerContact {
+        gap: 24px;
+    }
+
+    .footerContact svg {
+        width: 20px;
+        height: 21px;
+    }
 }

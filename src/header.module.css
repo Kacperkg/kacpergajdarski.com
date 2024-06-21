@@ -4,13 +4,14 @@ section.header {
     flex-direction: column;
     align-items: center;
     padding-inline: 50px;
+    margin-inline: auto;
 }
 
 .headerTitle {
     margin-top: 60px;
     text-align: center;
     font-family: "Space Grotesk";
-    font-size: 160px;
+    font-size: clamp(80px, 12vw, 160px);
     font-style: normal;
     font-weight: 300;
     line-height: 80%; /* 128px */
@@ -22,14 +23,14 @@ section.header {
 
 .bio {
     margin-top: 80px;
-    width: 583px;
+    max-width: 583px;
     display: flex;
     flex-direction: column;
     align-items: start;
 
     color: #fff;
     font-family: "Space Grotesk";
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
     font-style: normal;
     font-weight: 400;
     line-height: 30px; /* 150% */
@@ -87,4 +88,14 @@ section.header {
     height: auto;
     width: 100%;
     max-width: 1628px;
+}
+
+@media (max-width: 800px) {
+    .headerImage {
+        margin-top: 80px;
+        margin-inline: auto;
+        padding-inline: -50px;
+
+        aspect-ratio: 2.04/1.5;
+    }
 }

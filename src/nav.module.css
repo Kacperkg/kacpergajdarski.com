@@ -44,3 +44,9 @@ nav p:hover::after {
 nav div a {
     cursor: pointer;
 }
+
+@media (max-width: 1250px) {
+    nav div a {
+        visibility: hidden;
+    }
+}
