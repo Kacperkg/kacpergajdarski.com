@@ -28,7 +28,6 @@ section.projectsSection {
 
 .projectImage {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.05);
     aspect-ratio: 1.86/1;
     width: 80vw;
     height: auto;
@@ -93,7 +92,7 @@ svg > g {
 
 @media (max-width: 1000px) {
     .projectDesc p,
-    h1 {
+    .projectDesc h1 {
         display: none;
         visibility: hidden;
     }
@@ -105,9 +104,8 @@ svg > g {
         display: inline-block;
         aspect-ratio: 1.86/1.6;
         width: 80vw;
-        height: auto;
 
-        background-size: 100vw;
+        background-size: 100%;
         background-repeat: no-repeat;
         background-position: center center;
     }

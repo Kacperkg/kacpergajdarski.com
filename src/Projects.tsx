@@ -1,42 +1,47 @@
 import { Link } from "@react-email/components";
-import React, { useRef, useState } from "react";
-import comingsoon from "./assets/coming.png";
-import backgroundImage from "./assets/gabor-papp-9PBJr66VJwU-unsplash.jpg";
-import test1 from "./assets/testProsche.png";
+import { useRef, useState } from "react";
+import comingsoon from "./assets/comingsoon.jpg";
+import wideidea1 from "./assets/wideidea1.jpg";
 import Styles from "./projects.module.css";
 
 function Projects() {
-    const ref = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const ref = useRef<HTMLDivElement | null>(null);
+
     const images = [
         {
             id: 1,
-            url: test1,
-            name: "Entertainment Agency",
-            description: "Description for project one.",
+            url: "https://kacperkg.github.io/wideidea/",
+            image: wideidea1,
+            name: "WideIdea",
+            description:
+                "Welcome to WideIdea, a premier specialist entertainment agency dedicated to delivering exceptional experiences.",
         },
         {
             id: 2,
-            url: comingsoon,
+            url: "",
+            image: comingsoon,
             name: "Coming Soon",
             description: "",
         },
     ];
 
-    const handleClick = (direction) => {
-        let newIndex;
+    const handleClick = (direction: "next" | "prev") => {
+        let newIndex: number;
         if (direction === "next") {
             newIndex = (currentIndex + 1) % images.length;
-            setCurrentIndex(newIndex);
-        } else if (direction === "prev") {
+        } else {
             newIndex = (currentIndex - 1 + images.length) % images.length;
-            setCurrentIndex(newIndex);
         }
-        const containerWidth = ref.current.offsetWidth;
-        ref.current.scrollTo({
-            left: containerWidth * newIndex * 0.8,
-            behavior: "smooth",
-        });
+        setCurrentIndex(newIndex);
+
+        if (ref.current) {
+            const containerWidth = ref.current.offsetWidth;
+            ref.current.scrollTo({
+                left: containerWidth * newIndex * 0.8,
+                behavior: "smooth",
+            });
+        }
     };
 
     return (
@@ -44,6 +49,7 @@ function Projects() {
             <div className={Styles.projectContainer} ref={ref}>
                 {images.map((image, index) => (
                     <Link
+                        href={image.url}
                         className={Styles.projects}
                         key={image.id}
                         style={{
@@ -55,8 +61,8 @@ function Projects() {
                         <div
                             className={Styles.projectImage}
                             style={{
-                                backgroundImage: `url(${image.url})`,
-                                width: "80vw", // Set width to 80vw
+                                backgroundImage: `url(${image.image})`,
+                                width: "80vw",
                             }}
                         />
                     </Link>
@@ -78,7 +84,7 @@ function Projects() {
                             x="0"
                             y="0"
                             width="104"
-                            height="22"
+                            height="50"
                             fill="transparent"
                             onClick={() => handleClick("prev")}
                         />
@@ -90,7 +96,7 @@ function Projects() {
                             x="104"
                             y="0"
                             width="104"
-                            height="22"
+                            height="50"
                             fill="transparent"
                             onClick={() => handleClick("next")}
                         />

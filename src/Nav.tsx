@@ -1,11 +1,19 @@
 import React from "react";
 import Styles from "./nav.module.css";
 
-function Navbar({ scrollToProjects, scrollToFooter }) {
+interface NavbarProps {
+    scrollToProjects: () => void;
+    scrollToFooter: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+    scrollToProjects,
+    scrollToFooter,
+}) => {
     return (
         <nav>
             <div className={Styles.copyright}>
-                <a>&copy;Kacpergajdarski</a>
+                <a>&copy; Kacpergajdarski</a>
             </div>
             <div className={Styles.navContent}>
                 <p onClick={scrollToFooter}>Contact</p>
@@ -13,6 +21,6 @@ function Navbar({ scrollToProjects, scrollToFooter }) {
             </div>
         </nav>
     );
-}
+};
 
 export default Navbar;

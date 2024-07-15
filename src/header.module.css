@@ -80,7 +80,8 @@ section.header {
 
 .headerImage {
     margin-top: 80px;
-    background-size: 90vw;
+    width: 100%;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center center;
 

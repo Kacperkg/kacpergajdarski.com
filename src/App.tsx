@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import "./App.css";
 import Footer from "./Footer.tsx";
 import Header from "./Header.tsx";
@@ -7,15 +7,19 @@ import Navbar from "./Nav.tsx";
 import Projects from "./Projects.tsx";
 
 function App() {
-    const projectsRef = useRef(null);
-    const footerRef = useRef(null);
+    const projectsRef = useRef<HTMLDivElement | null>(null);
+    const footerRef = useRef<HTMLDivElement | null>(null);
 
     const scrollToProjects = () => {
-        projectsRef.current.scrollIntoView({ behavior: "smooth" });
+        if (projectsRef.current) {
+            projectsRef.current.scrollIntoView({ behavior: "smooth" });
+        }
     };
 
     const scrollToFooter = () => {
-        footerRef.current.scrollIntoView({ behavior: "smooth" });
+        if (footerRef.current) {
+            footerRef.current.scrollIntoView({ behavior: "smooth" });
+        }
     };
 
     return (

@@ -1,6 +1,6 @@
 import { Link } from "@react-email/components";
 import { motion } from "framer-motion";
-import testProsche from "./assets/testProsche.png";
+import wideidea2 from "./assets/wideidea2.jpg";
 import Styles from "./header.module.css";
 
 function Header() {
@@ -44,7 +44,7 @@ function Header() {
             <div
                 className={Styles.headerImage}
                 style={{
-                    backgroundImage: `url(${testProsche})`,
+                    backgroundImage: `url(${wideidea2})`,
                 }}></div>
         </section>
     );
