@@ -34,9 +34,8 @@ function Header() {
         }}
       >
         <p>
-          Junior front-end developer with expertise in React and Flutter, adept
-          at creating responsive web and mobile applications. Passionate about
-          UI/UX design and delivering seamless user experiences.
+          Final Year Computing Science Studnet @ Heriot-Watt University. Based
+          in Edinburgh, Scotland, UK. Aspired Front-End Developer
         </p>
         {Email()}
       </motion.div>
