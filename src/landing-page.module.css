@@ -1,0 +1,34 @@
+.overlay1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 1;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 1ms ease-in-out;
+}
+
+.box1,
+.box2,
+.box3 {
+  background-color: #000000;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  margin: 0;
+  padding: 0;
+  width: 10svw;
+  height: 10svw;
+  z-index: 2;
+  display: flex;
+}
