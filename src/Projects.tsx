@@ -87,8 +87,6 @@ function Projects() {
 
   return (
     <section className={Styles.projectsSection}>
-      <h1>Personal Projects</h1>
-
       <div className={Styles.projectContainer} ref={ref}>
         {images.map((image) => (
           <div className={Styles.projects} key={image.id}>
