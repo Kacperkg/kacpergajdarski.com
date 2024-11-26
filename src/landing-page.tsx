@@ -2,7 +2,11 @@ import { AnimationControls, motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import landingCss from "./landing-page.module.css";
 
-export default function LandingPage(): JSX.Element {
+export default function LandingPage({
+  onComplete,
+}: {
+  onComplete: () => void;
+}): JSX.Element {
   const overlayControls: AnimationControls = useAnimation();
   const boxControls: AnimationControls = useAnimation();
   const box1Controls: AnimationControls = useAnimation();
@@ -79,10 +83,19 @@ export default function LandingPage(): JSX.Element {
           transition: { duration: 0.1, ease: "easeInOut" },
         }),
       ]);
+
+      onComplete();
     }
 
     boxSequence();
-  }, [boxControls, box1Controls, box2Controls, box3Controls, overlayControls]);
+  }, [
+    boxControls,
+    box1Controls,
+    box2Controls,
+    box3Controls,
+    overlayControls,
+    onComplete,
+  ]);
 
   return (
     <>
