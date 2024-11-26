@@ -1,112 +1,122 @@
-import { Link } from "@react-email/components";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import comingsoon from "./assets/comingsoon.jpg";
 import wideidea1 from "./assets/wideidea1.jpg";
 import Styles from "./projects.module.css";
 
 function Projects() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-    const images = [
-        {
-            id: 1,
-            url: "https://kacperkg.github.io/wideidea/",
-            image: wideidea1,
-            name: "WideIdea",
-            description:
-                "Welcome to WideIdea, a premier specialist entertainment agency dedicated to delivering exceptional experiences.",
-        },
-        {
-            id: 2,
-            url: "",
-            image: comingsoon,
-            name: "Coming Soon",
-            description: "",
-        },
-    ];
+  const images = [
+    {
+      id: 1,
+      url: "https://kacperkg.github.io/wideidea/",
+      image: wideidea1,
+      name: "WideIdea",
+      description:
+        "Welcome to WideIdea, a premier specialist entertainment agency dedicated to delivering exceptional experiences.",
+    },
+    {
+      id: 2,
+      url: "",
+      image: comingsoon,
+      name: "Coming Soon",
+      description: "",
+    },
+  ];
 
-    const handleClick = (direction: "next" | "prev") => {
-        let newIndex: number;
-        if (direction === "next") {
-            newIndex = (currentIndex + 1) % images.length;
-        } else {
-            newIndex = (currentIndex - 1 + images.length) % images.length;
+  const scrollToImage = (index) => {
+    if (ref.current) {
+      const container = ref.current;
+      const children = Array.from(container.children) as HTMLElement[];
+
+      const targetChild = children[index];
+      if (targetChild) {
+        const containerCenter = container.offsetWidth / 2;
+        const childCenter =
+          targetChild.offsetLeft + targetChild.offsetWidth / 2;
+        const scrollPosition = childCenter - containerCenter;
+
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
+  const handleScroll = () => {
+    if (ref.current) {
+      const container = ref.current;
+      const containerCenter = container.scrollLeft + container.offsetWidth / 2;
+
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      const children = Array.from(container.children) as HTMLElement[];
+
+      children.forEach((child, index) => {
+        const childCenter = child.offsetLeft + child.offsetWidth / 2;
+
+        const distance = Math.abs(containerCenter - childCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
         }
-        setCurrentIndex(newIndex);
+      });
 
-        if (ref.current) {
-            const containerWidth = ref.current.offsetWidth;
-            ref.current.scrollTo({
-                left: containerWidth * newIndex * 0.8,
-                behavior: "smooth",
-            });
-        }
+      if (closestIndex !== activeIndex) {
+        setActiveIndex(closestIndex);
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.addEventListener("scroll", handleScroll);
+    }
+    return () => {
+      if (ref.current) {
+        ref.current.removeEventListener("scroll", handleScroll);
+      }
     };
+  }, [activeIndex]);
 
-    return (
-        <section className={Styles.projectsSection}>
-            <div className={Styles.projectContainer} ref={ref}>
-                {images.map((image, index) => (
-                    <Link
-                        href={image.url}
-                        className={Styles.projects}
-                        key={image.id}
-                        style={{
-                            filter:
-                                index !== currentIndex
-                                    ? "grayscale(100%)"
-                                    : "none",
-                        }}>
-                        <div
-                            className={Styles.projectImage}
-                            style={{
-                                backgroundImage: `url(${image.image})`,
-                                width: "80vw",
-                            }}
-                        />
-                    </Link>
-                ))}
-            </div>
+  console.log("Active Index:", activeIndex);
 
-            {/* Project Description */}
-            <div className={Styles.projectDesc}>
-                <h1>{images[currentIndex].name}</h1>
-                <p>{images[currentIndex].description}</p>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="209"
-                    height="22"
-                    viewBox="0 0 209 22"
-                    fill="none">
-                    <g>
-                        <rect
-                            x="0"
-                            y="0"
-                            width="104"
-                            height="50"
-                            fill="transparent"
-                            onClick={() => handleClick("prev")}
-                        />
-                        <path d="M11 21L1 11L11 0.999999" stroke="white" />
-                        <path d="M0.999996 11H94" stroke="white" />
-                    </g>
-                    <g>
-                        <rect
-                            x="104"
-                            y="0"
-                            width="104"
-                            height="50"
-                            fill="transparent"
-                            onClick={() => handleClick("next")}
-                        />
-                        <path d="M198 1L208 11L198 21" stroke="white" />
-                        <path d="M208 11L114 11" stroke="white" />
-                    </g>
-                </svg>
-            </div>
-        </section>
-    );
+  return (
+    <section className={Styles.projectsSection}>
+      <h1>Personal Projects</h1>
+
+      <div className={Styles.projectContainer} ref={ref}>
+        {images.map((image) => (
+          <div className={Styles.projects} key={image.id}>
+            <div
+              className={Styles.projectImage}
+              style={{
+                backgroundImage: `url(${image.image})`,
+              }}
+            />
+            <h2>{image.name}</h2>
+          </div>
+        ))}
+      </div>
+
+      {/* Dots Navigation */}
+      <div className={Styles.selectors}>
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`${Styles.dot} ${
+              activeIndex === index ? Styles.active : ""
+            }`}
+            onClick={() => scrollToImage(index)}
+          />
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Projects;

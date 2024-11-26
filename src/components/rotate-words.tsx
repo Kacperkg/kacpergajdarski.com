@@ -13,13 +13,44 @@ export function RotateWords({
   text2?: string; // Optional property
 }) {
   const [index, setIndex] = React.useState(0);
+  const [isRunning, setIsRunning] = React.useState(true);
+  const intervalRef = React.useRef<NodeJS.Timer | null>(null);
+
+  const startInterval = () => {
+    if (!intervalRef.current) {
+      intervalRef.current = setInterval(() => {
+        setIndex((prevIndex) => (prevIndex + 1) % words.length);
+      }, 5000);
+    }
+  };
+
+  const stopInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
 
   React.useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 5000);
-    // Clean up interval on unmount
-    return () => clearInterval(interval);
+    if (isRunning) {
+      startInterval();
+    } else {
+      stopInterval();
+    }
+
+    return () => stopInterval(); // Cleanup on unmount
+  }, [isRunning]);
+
+  // Pause rotation when the component loses focus or visibility
+  React.useEffect(() => {
+    const handleVisibilityChange = () => {
+      setIsRunning(!document.hidden);
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, []);
 
   return (

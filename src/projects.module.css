@@ -1,112 +1,83 @@
 section.projectsSection {
-    margin-top: 200px;
-    width: 100%;
+  margin-top: 200px;
+  width: 100%;
+  padding-inline: 50px;
+  min-height: 80svh;
 }
 
 .projectContainer {
-    width: 100%;
-    display: flex;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    transition: scroll 0.3s ease-in-out;
-    padding-right: 50px;
+  margin-top: 80px;
+  width: 100%;
+  height: 50svh;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: 32px;
+  scrollbar-width: none;
 }
 
-.projectContainer:first-child {
-    padding-left: 50px;
+.projectContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .projects {
-    width: 100%;
-}
-
-.test {
-    background-color: red;
-    height: 100%;
-    width: 50px;
+  scroll-snap-align: center;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  aspect-ratio: 16/9;
+  border-radius: 4px;
+  height: auto;
+  gap: 8px;
+  font-size: 12px;
 }
 
 .projectImage {
-    display: inline-block;
-    aspect-ratio: 1.86/1;
-    width: 80vw;
-    height: auto;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
 
-    background-size: 80vw;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.projectPreview {
-    background: rgba(255, 255, 255, 0.1);
-    aspect-ratio: 1.86/1;
-    width: 80vw;
-    height: auto;
+.projectsSection h1 {
+  padding-top: 60px;
+  color: #fff;
+  font-family: "Space Grotesk";
+  font-size: clamp(58px, 8vw, 120px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: 90%; /* 96px */
+  letter-spacing: -3.6px;
+  text-transform: uppercase;
+  text-align: left;
 }
 
-.projectDetails {
-    margin-top: 80px;
-    display: flex;
-    justify-content: space-between;
+.selectors {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 12px;
 }
 
-.projectDetails p {
-    max-width: 548px;
-    text-align: left;
+/* Dot Styling */
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  opacity: 0.4;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 
-.projectDesc {
-    padding-top: 60px;
-    padding-left: 50px;
-
-    padding-right: 50px;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+.dot:hover {
+  opacity: 0.8; /* Highlighted opacity on hover */
 }
 
-.projectDesc h1 {
-    color: #fff;
-    font-family: "Space Grotesk";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.projectDesc p {
-    max-width: 548px;
-
-    color: #fff;
-    font-family: "Space Grotesk";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: left;
-}
-
-svg > g {
-    cursor: pointer;
-}
-
-@media (max-width: 1000px) {
-    .projectDesc p,
-    .projectDesc h1 {
-        display: none;
-        visibility: hidden;
-    }
-    .projectDesc {
-        justify-content: center;
-    }
-
-    .projectImage {
-        display: inline-block;
-        aspect-ratio: 1.86/1.6;
-        width: 80vw;
-
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
+.dot.active {
+  background-color: #fff; /* Highlight active dot */
+  opacity: 1; /* Full opacity for active dot */
 }
